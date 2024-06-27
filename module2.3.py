@@ -1,20 +1,24 @@
-def print_params(a = 1 ,b = 'строка',c = True):
-    print(a, b, c)
+call = 0
 
+def count_calls():
+    global call
+    call += 1
 
-print_params(2,'число', False)
-print_params(2,'строка')
-print_params(0, 25, [1,2,3])
-print_params()
+count_calls()
 
+def string_info(string):
+    global call
+    call = 5
+    print(string)
+    print(call)
 
-values_list = [1, 'строка', True]
-print_params(*values_list)
-values_dict = {'a': 1,'b': 'строка','c': True}
-print_params(**values_dict)
+string_info(15)
+string_info('Fifteen')
 
+def is_contains(string, list_to_search):
+    print(string, list_to_search)
 
-values_list_2 = [21,42]
-print_params(*values_list_2, 42)
+is_contains(True, False)
+is_contains('Str', 'Str2')
 
 
